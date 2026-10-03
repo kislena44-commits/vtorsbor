@@ -16,23 +16,23 @@
 <style>
 :root {
   --шрифт-заголовков: Montserrat, system-ui, sans-serif;  --шрифт-текста: 'Open Sans', -apple-system, 'Segoe UI', sans-serif;
-  --цвет-фон: #F7F2E8;  --цвет-фон-2: #EEE6D4;  --цвет-фон-карточки: #FFFDF8;
-  --цвет-текст: #172329;  --цвет-текст-мягкий: #566A6C;  --цвет-текст-тихий: #95A2A3;
-  --цвет-акцент: #DA1F04;  --цвет-акцент-тёмный: #B01903;  --цвет-акцент-яркий: #F57200;  --цвет-на-акценте: #FFFFFF;
-  --цвет-акцент-глубже: #C21B03;  --цвет-акцент-маркер: #0A6260;
-  --цвет-линия: #E4DCC9;
-  --цвет-тёмный-фон: #07161D;  --цвет-тёмный-фон-2: #0C2B2B;  --цвет-тёмный-текст: #F7F2E8;
-  --цвет-тёмный-фон-3: #091D22;  --цвет-тёмный-фон-4: #0A2326;
-  --цвет-тёплый: #F5A905;  --цвет-тёплый-мягкий: #FBCB63;
-  --цвет-стекло: color-mix(in srgb, #07161D 86%, transparent);
-  --тень: 0 12px 34px color-mix(in srgb, #07161D 6%, transparent);
-  --тень-чип: 0 10px 30px color-mix(in srgb, #07161D 12%, transparent);
-  --тень-глубокая: 0 24px 60px color-mix(in srgb, #07161D 35%, transparent);
-  --тень-спутник: 0 30px 60px color-mix(in srgb, #07161D 70%, transparent);
-  --тень-плиты: 0 40px 100px color-mix(in srgb, #07161D 70%, transparent);
-  --кегль-h1: 35px;  --кегль-h2: clamp(28px, 4.8vw, 48px);
-  --кегль-текст: clamp(16px, 1vw, 17px);  --кегль-лид: clamp(18px, 1.55vw, 23px);
-  --кегль-мелкий: 14px;  --кегль-кикер: clamp(14px, 1.25vw, 18px);  --кегль-цифра: 34px;  --разрядка-кикера: .08em;
+  --цвет-фон: #E5E5DF;  --цвет-фон-2: #D8D8D0;  --цвет-фон-карточки: #F3F3EF;
+  --цвет-текст: #07111D;  --цвет-текст-мягкий: #39444D;  --цвет-текст-тихий: #7F868B;
+  --цвет-акцент: #C8401F;  --цвет-акцент-тёмный: #8C230D;  --цвет-акцент-яркий: #D04A22;  --цвет-на-акценте: #FFFFFF;
+  --цвет-акцент-глубже: #9A2710;  --цвет-акцент-маркер: #DB9941;
+  --цвет-линия: #CACAC2;
+  --цвет-тёмный-фон: #07111D;  --цвет-тёмный-фон-2: #0C1823;  --цвет-тёмный-текст: #E5E5DF;
+  --цвет-тёмный-фон-3: #09141F;  --цвет-тёмный-фон-4: #0B1722;
+  --цвет-тёплый: #DB9941;  --цвет-тёплый-мягкий: #EBC48C;
+  --цвет-стекло: color-mix(in srgb, #07111D 86%, transparent);
+  --тень: 0 12px 34px color-mix(in srgb, #07111D 6%, transparent);
+  --тень-чип: 0 10px 30px color-mix(in srgb, #07111D 12%, transparent);
+  --тень-глубокая: 0 24px 60px color-mix(in srgb, #07111D 35%, transparent);
+  --тень-спутник: 0 30px 60px color-mix(in srgb, #07111D 70%, transparent);
+  --тень-плиты: 0 40px 100px color-mix(in srgb, #07111D 70%, transparent);
+  --кегль-h1: 35px;  --кегль-h2: clamp(30px, 4.8vw, 56px);
+  --кегль-текст: clamp(17px, 1.2vw, 18px);  --кегль-лид: clamp(18px, 1.55vw, 23px);
+  --кегль-мелкий: 15px;  --кегль-кикер: clamp(14px, 1.25vw, 18px);  --кегль-цифра: 34px;  --разрядка-кикера: .08em;
   --отступ-секции: clamp(56px, 9vw, 112px);  --отступ-блока: clamp(16px, 2vw, 26px);
   --отступ-секции-тихо: clamp(44px, 7vw, 88px);  --отступ-секции-громко: clamp(64px, 10.5vw, 130px);
   --ширина: 1180px;  --ширина-колонки: 600px;  --радиус: 8px;  --радиус-малый: 4px;
@@ -90,6 +90,45 @@
 <body class="с-липкой-кнопкой">
 <section class="блок блок--первый-экран первый-экран--сцена тёмный фон--пятна" id="экран-1" data-тип="первый-экран" data-схема="сцена" data-ключ-макета="тёмная" data-картинка="фото" style="--добор-затемнения: 0; --добор-высветления: .18">
   <style>
+/* Кнопки этого сайта крупнее (просьба человека 02.10.2026) */
+/* Вторая кнопка — Телеграм (02.10.2026): контуром, светлой на тёмной сцене */
+/* Телеграм — матовое стекло (просьба человека 02.10.2026): чуть светлее фона, размывает то, что за ним */
+#экран-1 .первый-экран__действие .кнопка--телеграм { color: var(--цвет-тёмный-текст); border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent);
+background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 8%, transparent));
+-webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); }
+#экран-1 .первый-экран__действие .кнопка--телеграм:hover { background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent)); }
+/* На телефоне ядро делает вторую кнопку обложки ссылкой со стрелкой — здесь Телеграм остаётся настоящей кнопкой */
+@media (max-width: 899px) {
+  #экран-1 .первый-экран__действие .кнопка--телеграм { min-height: 3.2em; padding: .9em 1.5em; border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); flex: 1 1 100%; }
+  #экран-1 .первый-экран__действие .кнопка--телеграм::after { content: none; }
+}
+#экран-1 .первый-экран__действие .кнопка { font-size: var(--кегль-лид); padding: .9em 1.5em; min-height: 3.2em; text-align: center; }
+/* Плавный переход ко второму экрану (просьба человека 28.09.2026): картинка тает книзу в цвет фона, нижнее пятно атмосферы снято */
+#экран-1 .картинка--сцена { -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); }
+#экран-1.фон--пятна::after { display: none; }
+/* Фото Газели (03.10.2026) снято уже с местом под текст слева: на компьютере кадр во всю ширину экрана,
+   без приближения ядра на 128% — иначе машина и надпись на кузове уходят за правый край */
+@media (min-width: 900px) { #экран-1 .картинка--сцена img { width: 100%; object-position: 50% 55%; } }
+/* Правки по проверке (03.10.2026). Компьютер: затемнение слева чуть шире — подзаголовок не сливается с бежевой
+   кабиной; сверху тёмная полоса под шапкой — часы работы не лежат на пёстрой листве */
+@media (min-width: 900px) {
+  #экран-1 .картинка--сцена::after { background:
+      linear-gradient(to bottom, color-mix(in srgb, var(--цвет-тёмный-фон) 75%, transparent) 0, transparent 130px),
+      linear-gradient(to right, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 32%,
+          color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 44%, color-mix(in srgb, var(--цвет-тёмный-фон) 30%, transparent) 51%, transparent 57%); }
+}
+/* Телефон: машина поднята выше, затемнение под текст начинается ниже колёс — надпись и номер на фургоне читаются;
+   под шапкой тоже тёмная полоса */
+@media (max-width: 899px) {
+  #экран-1 .картинка--сцена img { transform: translateY(-64px); }
+  #экран-1 .картинка--сцена::after { background:
+      linear-gradient(to bottom, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 0, color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 70px, transparent 150px),
+      linear-gradient(to top, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 22%,
+          color-mix(in srgb, var(--цвет-тёмный-фон) 50%, transparent) 30%, transparent 37%); }
+}
+#экран-1.тёмный { background: linear-gradient(to bottom, transparent 70%, var(--цвет-тёмный-фон)), linear-gradient(160deg, var(--цвет-тёмный-фон), var(--цвет-тёмный-фон-2) 70%, var(--цвет-тёмный-фон)); }
+/* Просьба человека 28.09.2026: без жёлтой черты перед значком у надписи над заголовком — на компьютере и телефоне */
+#экран-1 .кикер::before { display: none; }
 /* Просьба человека 27.09.2026: на компьютере вторая часть заголовка — отдельной строкой и мельче, как на телефоне */
 @media (min-width: 900px) {
   #экран-1 h1 { font-size: clamp(3.125rem, 4.6vw, 4.25rem); }   /* у сцены свой кегль 44–58px, человек просил крупнее: 50–68px */
@@ -101,6 +140,19 @@
   /* кнопка первого экрана крупнее — вслед за заголовком (просьба человека 27.09.2026) */
   #экран-1 .кнопка--главная { font-size: 1.125em; padding: .85em 1.6em; }
 }
+  /* Телеграм читаемее (проверка 02.10.2026): надпись белая и жирнее, стекло чуть плотнее — но всё ещё стекло */
+  #экран-1 .первый-экран__действие .кнопка--телеграм { color: var(--цвет-на-акценте); font-weight: 700; border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 40%, transparent);
+      background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмный-текст) 28%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent)); }
+  #экран-1 .первый-экран__действие .кнопка--телеграм:hover { background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмный-текст) 36%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 20%, transparent)); }
+  /* Телеграм — с той же тенью, что у кнопки Макс рядом (просьба человека 02.10.2026) */
+  #экран-1 .первый-экран__действие .кнопка--телеграм { box-shadow: var(--тень-глубокая); }
+  /* Макс не мигает (просьба человека 02.10.2026): пульсация главной кнопки выключена — и на первом экране, и на липкой кнопке телефона */
+  #экран-1 .первый-экран__действие .кнопка--главная { animation: none; }
+  .липкая-кнопка .кнопка--главная { animation: none; }
+  /* Липкая кнопка телефона видна всегда, не прячется у главных кнопок экранов (решение человека 03.10.2026) */
+  body.главная-на-виду .липкая-кнопка { transform: none; opacity: 1; pointer-events: auto; }
+  /* Две кнопки — одной ширины на компьютере; на телефоне обе и так во всю ширину */
+  @media (min-width: 900px) { #экран-1 .первый-экран__действие { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; } }
 </style>
   <header class="шапка">
     <a class="шапка__лого" href="#">ВторСбор</a>
@@ -108,7 +160,7 @@
   <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
 </svg><span><span class="полн">Кострома и Шарья · Пн–Пт 8:00–17:30, Сб 8:00–14:00</span><span class="кратко">Кострома и Шарья</span></span></span>
   </header>
-  <figure class="картинка картинка--сцена первый-экран__картинка"><picture><source media="(max-width: 899px)" srcset="img/gazel-chernovik-telefon.webp"><img src="img/gazel-chernovik.webp" alt="Сдайте вторсырьё за деньги заберём сами или привезёте" data-лицо="50,22" fetchpriority="high"></picture></figure>
+  <figure class="картинка картинка--сцена первый-экран__картинка"><picture><source media="(max-width: 899px)" srcset="img/kadr-1-telefon.webp"><img src="img/kadr-1.webp" alt="Газель ВторСбора с надписью «Макулатура дорого» в парке" data-лицо="65,55" fetchpriority="high"></picture></figure>
   <div class="блок__внутри">
     <div class="первый-экран__текст">
       <p class="кикер"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -118,29 +170,693 @@
 </svg>Кострома и Костромская область</p>
       <h1>Платим за вторсырьё<span class="делитель"> —</span> <span class="хвост">заберём у вас или примем на <em class="акцент">пункте</em></span></h1>
       <p class="лид">Два пункта приёма — в Костроме и Шарье, и своя машина с весами для вывоза</p>
-      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a></div>
+      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></div>
     </div>
   </div>
+</section>
+<section class="блок блок--прайс-лист тёмный второй" id="экран-02" data-тип="прайс-лист" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="секция__шапка секция__шапка--центр">
+    <h2>Что мы принимаем</h2>
+  </div>
+  <div class="группы">
+    <div class="колонка">
+      <div class="группа">
+        <h3 class="группа__имя">Бумага и картон</h3>
+        <ul class="табло">
+          <li class="строка"><div><h4 class="строка__имя">Макулатура белая</h4><p class="строка__пояснение">офисная документация, белые писчие листы; серая и цветная бумага не допускается</p></div><p class="тариф__цена"><b>10 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Макулатура смешанная</h4><p class="строка__пояснение">архив, книги, журналы, буклеты, листовки, брошюры и глянцевые изделия</p></div><p class="тариф__цена"><b>5 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Картон</h4><p class="строка__пояснение">сухие коробки и гофрокартон</p></div><p class="тариф__цена"><b>6 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Газета</h4><p class="строка__пояснение">газеты</p></div><p class="тариф__цена"><b>5 ₽</b><span>/кг</span></p></li>
+        </ul>
+      </div>
+      <div class="группа">
+        <h3 class="группа__имя">Металл</h3>
+        <ul class="табло">
+          <li class="строка"><div><h4 class="строка__имя">Алюминиевые банки</h4><p class="строка__пояснение">пустые смятые банки из-под напитков, не притягиваются магнитом</p></div><p class="тариф__цена"><b>65 ₽</b><span>/кг</span></p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="колонка">
+      <div class="группа">
+        <h3 class="группа__имя">Пластик</h3>
+        <ul class="табло">
+          <li class="строка"><div><h4 class="строка__имя">Плёнка</h4><p class="строка__пояснение">ПВД, стрейч</p></div><p class="тариф__цена"><b>10 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">ПЭТ-бутылка</h4><p class="строка__пояснение">бутылки от напитков до 5 л, этикетки и крышки можно не снимать</p></div><p class="тариф__цена"><b>12 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Канистры ПНД</h4><p class="строка__пояснение">из-под технических средств: масло, химия, антифриз, моющие средства; из-под кислоты не принимаются</p></div><p class="тариф__цена"><b>8 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Пластик: фритюры</h4><p class="строка__пояснение">фритюры</p></div><p class="тариф__цена"><b>5 ₽</b><span>/кг</span></p></li>
+          <li class="строка"><div><h4 class="строка__имя">Пластик: фруктовые ящики</h4><p class="строка__пояснение">фруктовые ящики</p></div><p class="тариф__цена"><b>2 ₽</b><span>/кг</span></p></li>
+        </ul>
+      </div>
+      <div class="группа">
+        <h3 class="группа__имя">Дерево</h3>
+        <ul class="табло">
+          <li class="строка"><div><h4 class="строка__имя">Поддоны</h4><p class="строка__пояснение">деревянные поддоны</p></div><p class="тариф__цена"><b>70 ₽</b><span>/шт</span></p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="итог">
+    <p class="итог__подпись"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="6" width="20" height="12" rx="2"/>
+  <circle cx="12" cy="12" r="2.5"/>
+</svg><span>Оплата сразу — наличными, на карту или на расчётный счёт</span></p>
+    <div class="действие-секции"><span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span></div>
+  </div>
+</div>
+</section>
+<section class="блок блок--калькулятор тёмный" id="экран-03" data-тип="калькулятор" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="секция__шапка">
+    <h2>Посчитайте, сколько получите</h2>
+    <p class="секция__лид">Выберите сырьё и вес — сумма по нашим ценам появится сразу</p>
+  </div>
+
+  <form class="калькулятор" novalidate>
+    <div class="калькулятор__строки" data-строки>
+      <div class="калькулятор__строка" data-строка>
+        <div class="калькулятор__поле--вид">
+          <label>
+            <span class="калькулятор__подпись">Вид сырья</span>
+            <select class="калькулятор__выбор" data-выбор>
+              <option value="" data-цена="" data-единица="кг">Выберите сырьё</option>
+              <optgroup label="Бумага и картон">
+                <option data-цена="10" data-единица="кг">Макулатура белая</option>
+                <option data-цена="5" data-единица="кг">Макулатура смешанная</option>
+                <option data-цена="6" data-единица="кг" selected>Картон</option>
+                <option data-цена="5" data-единица="кг">Газета</option>
+              </optgroup>
+              <optgroup label="Металл">
+                <option data-цена="65" data-единица="кг">Алюминиевые банки</option>
+              </optgroup>
+              <optgroup label="Пластик">
+                <option data-цена="10" data-единица="кг">Плёнка</option>
+                <option data-цена="12" data-единица="кг">ПЭТ-бутылка</option>
+                <option data-цена="8" data-единица="кг">Канистры ПНД</option>
+                <option data-цена="5" data-единица="кг">Пластик: фритюры</option>
+                <option data-цена="2" data-единица="кг">Пластик: фруктовые ящики</option>
+              </optgroup>
+              <optgroup label="Дерево">
+                <option data-цена="70" data-единица="шт">Поддоны</option>
+              </optgroup>
+              <optgroup label="Документация">
+                <option data-цена="" data-единица="кг" data-архив="1">Утилизация архивно-офисной документации</option>
+              </optgroup>
+            </select>
+          </label>
+        </div>
+
+        <div class="калькулятор__поле--вес" data-поле-вес>
+          <label>
+            <span class="калькулятор__подпись">Вес</span>
+            <span class="калькулятор__ввод">
+              <input type="number" class="калькулятор__число" data-вес inputmode="decimal" min="0" step="0.1" placeholder="0" value="300">
+              <span class="калькулятор__единица" data-единица-вес>кг</span>
+            </span>
+          </label>
+        </div>
+
+        <p class="калькулятор__архивная-пометка" data-архивная-пометка hidden>Цена по договорённости — напишите нам в Макс</p>
+
+        <p class="тариф__цена калькулятор__сумма" data-поле-сумма><b data-сумма-число>—</b></p>
+
+        <button type="button" class="калькулятор__убрать" data-убрать hidden aria-label="Убрать строку"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 5h2l2.5 11h11L21 8H7"/>
+  <circle cx="9" cy="20" r="1"/>
+  <circle cx="17" cy="20" r="1"/>
+</svg></button>
+      </div>
+    </div>
+
+    <template data-шаблон-строки>
+      <div class="калькулятор__строка" data-строка>
+        <div class="калькулятор__поле--вид">
+          <label>
+            <span class="калькулятор__подпись">Вид сырья</span>
+            <select class="калькулятор__выбор" data-выбор>
+              <option value="" data-цена="" data-единица="кг">Выберите сырьё</option>
+              <optgroup label="Бумага и картон">
+                <option data-цена="10" data-единица="кг">Макулатура белая</option>
+                <option data-цена="5" data-единица="кг">Макулатура смешанная</option>
+                <option data-цена="6" data-единица="кг">Картон</option>
+                <option data-цена="5" data-единица="кг">Газета</option>
+              </optgroup>
+              <optgroup label="Металл">
+                <option data-цена="65" data-единица="кг">Алюминиевые банки</option>
+              </optgroup>
+              <optgroup label="Пластик">
+                <option data-цена="10" data-единица="кг">Плёнка</option>
+                <option data-цена="12" data-единица="кг">ПЭТ-бутылка</option>
+                <option data-цена="8" data-единица="кг">Канистры ПНД</option>
+                <option data-цена="5" data-единица="кг">Пластик: фритюры</option>
+                <option data-цена="2" data-единица="кг">Пластик: фруктовые ящики</option>
+              </optgroup>
+              <optgroup label="Дерево">
+                <option data-цена="70" data-единица="шт">Поддоны</option>
+              </optgroup>
+              <optgroup label="Документация">
+                <option data-цена="" data-единица="кг" data-архив="1">Утилизация архивно-офисной документации</option>
+              </optgroup>
+            </select>
+          </label>
+        </div>
+
+        <div class="калькулятор__поле--вес" data-поле-вес>
+          <label>
+            <span class="калькулятор__подпись">Вес</span>
+            <span class="калькулятор__ввод">
+              <input type="number" class="калькулятор__число" data-вес inputmode="decimal" min="0" step="0.1" placeholder="0">
+              <span class="калькулятор__единица" data-единица-вес>кг</span>
+            </span>
+          </label>
+        </div>
+
+        <p class="калькулятор__архивная-пометка" data-архивная-пометка hidden>Цена по договорённости — напишите нам в Макс</p>
+
+        <p class="тариф__цена калькулятор__сумма" data-поле-сумма><b data-сумма-число>—</b></p>
+
+        <button type="button" class="калькулятор__убрать" data-убрать hidden aria-label="Убрать строку"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 5h2l2.5 11h11L21 8H7"/>
+  <circle cx="9" cy="20" r="1"/>
+  <circle cx="17" cy="20" r="1"/>
+</svg></button>
+      </div>
+    </template>
+
+    <button type="button" class="кнопка кнопка--контур калькулятор__добавить" data-добавить><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14M5 12h14"/>
+</svg><span>Ещё вид сырья</span></button>
+
+    <div class="калькулятор__итог">
+      <p class="калькулятор__итог-подпись">Итого</p>
+      <p class="тариф__цена калькулятор__итог-сумма"><b data-итого>0 ₽</b></p>
+    </div>
+  </form>
+
+  <p class="калькулятор__сноска">Расчёт примерный: точную сумму считаем по весам при вас.</p>
+
+  <div class="калькулятор__действие">
+    <span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span>
+    <p class="калькулятор__действие-подпись">от 500 кг приедем и заберём сами</p>
+  </div>
+</div>
+<script>
+(function () {
+  var раздел = document.getElementById('экран-03');
+  if (!раздел) return;
+  var список = раздел.querySelector('[data-строки]');
+  var шаблон = раздел.querySelector('[data-шаблон-строки]');
+  var кнопкаДобавить = раздел.querySelector('[data-добавить]');
+  var итогоЭл = раздел.querySelector('[data-итого]');
+
+  function пересчитатьСтроку(строка) {
+    var выбор = строка.querySelector('[data-выбор]');
+    var опция = выбор.options[выбор.selectedIndex];
+    var архив = !!(опция && опция.dataset.архив === '1');
+    var полеВес = строка.querySelector('[data-поле-вес]');
+    var полеСумма = строка.querySelector('[data-поле-сумма]');
+    var пометка = строка.querySelector('[data-архивная-пометка]');
+    var единица = строка.querySelector('[data-единица-вес]');
+    строка.classList.toggle('калькулятор__строка--архив', архив);
+    if (единица && опция) единица.textContent = опция.dataset.единица || 'кг';
+
+    if (архив) {
+      полеВес.hidden = true;
+      полеСумма.hidden = true;
+      пометка.hidden = false;
+      return 0;
+    }
+    полеВес.hidden = false;
+    полеСумма.hidden = false;
+    пометка.hidden = true;
+
+    var числоЭл = строка.querySelector('[data-сумма-число]');
+    var цена = опция && опция.value ? parseFloat(опция.dataset.цена) : NaN;
+    var вес = parseFloat(строка.querySelector('[data-вес]').value);
+    if (!опция || !опция.value || isNaN(цена) || isNaN(вес) || вес <= 0) {
+      числоЭл.textContent = '—';
+      return 0;
+    }
+    var сумма = Math.round(цена * вес);
+    числоЭл.textContent = сумма.toLocaleString('ru-RU') + ' ₽';
+    return сумма;
+  }
+
+  function пересчитатьВсё() {
+    var строки = список.querySelectorAll('[data-строка]');
+    var итого = 0;
+    строки.forEach(function (строка) { итого += пересчитатьСтроку(строка); });
+    итогоЭл.textContent = итого.toLocaleString('ru-RU') + ' ₽';
+    строки.forEach(function (строка) {
+      var убрать = строка.querySelector('[data-убрать]');
+      if (убрать) убрать.hidden = строки.length < 2;
+    });
+  }
+
+  function привязатьСтроку(строка) {
+    строка.querySelector('[data-выбор]').addEventListener('change', пересчитатьВсё);
+    строка.querySelector('[data-вес]').addEventListener('input', пересчитатьВсё);
+    var убрать = строка.querySelector('[data-убрать]');
+    убрать.addEventListener('click', function () {
+      if (список.querySelectorAll('[data-строка]').length > 1) {
+        строка.remove();
+        пересчитатьВсё();
+      }
+    });
+  }
+
+  список.querySelectorAll('[data-строка]').forEach(привязатьСтроку);
+
+  кнопкаДобавить.addEventListener('click', function () {
+    var новая = шаблон.content.firstElementChild.cloneNode(true);
+    список.appendChild(новая);
+    привязатьСтроку(новая);
+    пересчитатьВсё();
+  });
+
+  пересчитатьВсё();
+})();
+</script>
+</section>
+<section class="блок блок--боль тёмный второй" id="экран-04" data-тип="боль" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="секция__шапка">
+    <h2>Сдают и организации, и жители</h2>
+    <p class="секция__лид">С организациями заключаем договор, жителям платим на месте</p>
+  </div>
+  <div class="половины">
+    <div class="половина половина--организациям">
+      <figure class="фото половина__фото"><picture><source media="(max-width: 899px)" srcset="img/kadr-4a-telefon.webp"><img src="img/kadr-4a.webp" alt="Газель ВторСбора у склада магазина, грузчики подкатывают тюки картона" loading="lazy" decoding="async"></picture></figure>
+      <p class="половина__метка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 3l7.5 3v5.5c0 4.6-3.2 8.2-7.5 9.5-4.3-1.3-7.5-4.9-7.5-9.5V6L12 3z"/>
+  <path d="M9 12l2 2 4-4.5"/>
+</svg><span>Организациям</span></p>
+      <h3 class="половина__обещание">Забираем картон и плёнку сами — от&nbsp;500&nbsp;кг</h3>
+      <ul class="организации">
+        <li class="организации__пункт организации__пункт--глав">
+          <h4 class="организации__имя"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 5h2l2.5 11h11L21 8H7"/>
+  <circle cx="9" cy="20" r="1"/>
+  <circle cx="17" cy="20" r="1"/>
+</svg><span>Магазинам и торговым точкам</span></h4>
+          <p class="организации__текст">забираем картон и плёнку сами от 500 кг, по расписанию в одни и те же дни</p>
+        </li>
+        <li class="организации__пункт">
+          <h4 class="организации__имя"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="8" width="13" height="11" rx="1.5"/>
+  <path d="M16 12h3l2.5 3v4H16"/>
+  <circle cx="8" cy="20" r="1.3"/>
+  <circle cx="18" cy="20" r="1.3"/>
+</svg><span>Складам</span></h4>
+          <p class="организации__текст">приезжаем в постоянные дни, грузим сами, весы есть в каждой машине</p>
+        </li>
+        <li class="организации__пункт">
+          <h4 class="организации__имя"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.8 2.8-2.5-2.5z"/>
+</svg><span>Производствам</span></h4>
+          <p class="организации__текст">любые объёмы, оплата на расчётный счёт, договор</p>
+        </li>
+        <li class="организации__пункт">
+          <h4 class="организации__имя"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h7l5 5v13H7z"/>
+  <path d="M14 3v5h5M10 13h5M10 17h5"/>
+</svg><span>Офисам</span></h4>
+          <p class="организации__текст">утилизируем архивы и выдаём акт о переработке</p>
+        </li>
+      </ul>
+      <p class="половина--организациям__итог">договор · вывоз от 500 кг · акты по архивам</p>
+    </div>
+    <div class="половина--жителям-колонка">
+      <div class="половина половина--жителям">
+        <p class="половина__метка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M3 11l9-8 9 8v10h-6v-6H9v6H3z"/>
+</svg><span>Жителям</span></p>
+        <h3 class="половина__фраза-жителям">Привезите в пункт — деньги сразу после взвешивания</h3>
+        <ul class="пункты-приёма">
+          <li>Кострома, ул. Зелёная, 2А</li>
+          <li>Шарья, ул. Сенная, 13</li>
+        </ul>
+        <p class="половина--жителям__часы">Пн–Пт 08:00–17:30 · Сб 08:00–14:00 · Вс выходной</p>
+      </div>
+      <figure class="фото половина--жителям__фото"><picture><source media="(max-width: 899px)" srcset="img/kadr-4b-telefon.webp"><img src="img/kadr-4b.webp" alt="Пункт приёма ВторСбора: тюки картона, сетки с бутылками и весы" loading="lazy" decoding="async"></picture></figure>
+    </div>
+  </div>
+</div>
+</section>
+<section class="блок блок--решение тёмный" id="экран-05" data-тип="решение" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="секция__шапка">
+    <h2>Как мы забираем сырьё</h2>
+  </div>
+  <figure class="фото лента-кадр"><picture><source media="(max-width: 899px)" srcset="img/kadr-5-telefon.webp"><img src="img/kadr-5.webp" alt="Газели ВторСбора у склада: погрузчик грузит тюки картона" loading="lazy" decoding="async"></picture></figure>
+  <ol class="плитки">
+    <li class="плитка">
+      <div class="плитка__верх"><span class="плитка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 5h16v11H9l-5 4z"/>
+</svg></span><p class="плитка__номер">01</p></div>
+      <h3 class="плитка__имя">Пишете в Макс</h3>
+      <p class="плитка__текст">какое сырьё, примерный вес и адрес</p>
+    </li>
+    <li class="плитка">
+      <div class="плитка__верх"><span class="плитка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="5" width="18" height="16" rx="2"/>
+  <path d="M3 10h18M8 3v4M16 3v4"/>
+</svg></span><p class="плитка__номер">02</p></div>
+      <h3 class="плитка__имя">Договариваемся о дне</h3>
+      <p class="плитка__текст">к новым клиентам обычно приезжаем на следующий день, организациям ставим постоянные дни</p>
+    </li>
+    <li class="плитка плитка--глав">
+      <div class="плитка__верх"><span class="плитка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="8" width="13" height="11" rx="1.5"/>
+  <path d="M16 12h3l2.5 3v4H16"/>
+  <circle cx="8" cy="20" r="1.3"/>
+  <circle cx="18" cy="20" r="1.3"/>
+</svg></span><p class="плитка__номер">03</p></div>
+      <h3 class="плитка__имя">Приезжаем и грузим сами</h3>
+      <p class="плитка__текст">весы в машине, взвешиваем при вас</p>
+    </li>
+    <li class="плитка">
+      <div class="плитка__верх"><span class="плитка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="6" width="20" height="12" rx="2"/>
+  <circle cx="12" cy="12" r="2.5"/>
+</svg></span><p class="плитка__номер">04</p></div>
+      <h3 class="плитка__имя">Рассчитываемся</h3>
+      <p class="плитка__текст">на месте наличными, на карту или на расчётный счёт; можно взвесить на базе и перевести деньги</p>
+    </li>
+  </ol>
+  <div class="полоса">
+    <p class="полоса__текст">Вывозим сами от 500 кг; меньше — привезите в пункт приёма</p>
+    <div class="полоса__действие"><span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span></div>
+  </div>
+</div>
+</section>
+<section class="блок блок--решение тёмный второй" id="экран-06" data-тип="решение" data-вёрстка="своя">
+<div class="блок__внутри">
+  <figure class="фото кадр">
+    <picture><source media="(max-width: 899px)" srcset="img/kadr-6-telefon.webp"><img src="img/kadr-6.webp" alt="Легковая машина с открытым багажником у весов пункта приёма, рядом тюки картона" loading="lazy" decoding="async"></picture>
+    <div class="кадр__текст">
+      <h2>Привезите сырьё сами — выгрузим и заплатим</h2>
+      <p class="кадр__лид">Приезжайте в рабочие часы — записываться не нужно</p>
+    </div>
+  </figure>
+  <ul class="пункты">
+    <li class="пункт пункт--главный">
+      <h3 class="пункт__город"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+  <circle cx="12" cy="10" r="2"/>
+</svg> Кострома</h3>
+      <p class="пункт__адрес">ул. Зелёная, 2А</p>
+      <p class="пункт__часы">Пн–Пт 8:00–17:30 · Сб 8:00–14:00<br>Вс — выходной</p>
+    </li>
+    <li class="пункт пункт--второй">
+      <h3 class="пункт__город"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+  <circle cx="12" cy="10" r="2"/>
+</svg> Шарья</h3>
+      <p class="пункт__адрес">ул. Сенная, 13</p>
+      <p class="пункт__часы">Пн–Пт 8:00–17:30 · Сб 8:00–14:00<br>Вс — выходной</p>
+    </li>
+  </ul>
+  <ul class="строка">
+    <li><span class="строка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="5" y="2" width="12" height="20" rx="1"/>
+  <path d="M3 22h18"/>
+  <circle cx="14" cy="12" r="1"/>
+</svg></span><h3 class="строка__имя">Привозите без записи</h3><p class="строка__текст">в любой из двух пунктов в рабочие часы</p></li>
+    <li><span class="строка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="9" cy="8" r="3.5"/>
+  <circle cx="17" cy="9" r="2.5"/>
+  <path d="M3 20a6 6 0 0 1 12 0M15 20a4 4 0 0 1 6 0"/>
+</svg></span><h3 class="строка__имя">Выгружаем сами</h3><p class="строка__текст">наши грузчики снимут всё с машины</p></li>
+
+    <li><span class="строка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16M8 20h8M5 7h14"/><path d="M5 7l-2.8 6.5M5 7l2.8 6.5M1.8 13.5h6.4a3.2 2.6 0 0 1-6.4 0z"/><path d="M19 7l-2.8 6.5M19 7l2.8 6.5M15.8 13.5h6.4a3.2 2.6 0 0 1-6.4 0z"/></svg></span><h3 class="строка__имя">Взвешиваем при вас</h3><p class="строка__текст">на поверенных весах, платформенных и автомобильных</p></li>
+    <li><span class="строка__иконка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="6" width="20" height="12" rx="2"/>
+  <circle cx="12" cy="12" r="2.5"/>
+</svg></span><h3 class="строка__имя">Платим сразу</h3><p class="строка__текст">наличными, на карту или на расчётный счёт</p></li>
+  </ul>
+  <div class="низ">
+    <p class="низ__текст">Привозите сырьё сухим и рассортированным по видам — как подготовить и что мы не берём, рассказываем ниже.</p>
+    <div class="низ__действие"><span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span></div>
+  </div>
+</div>
+</section>
+<section class="блок блок--решение тёмный" id="экран-07" data-тип="решение" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="вход">
+    <h2>Как подготовить сырьё</h2>
+    <p class="вход__лид">Так приёмка пройдёт без отказов, а сырьё попадёт на переработку, а не на полигон</p>
+  </div>
+  <div class="было-стало">
+    <figure class="фото"><picture><source media="(max-width: 899px)" srcset="img/kadr-7a-telefon.webp"><img src="img/kadr-7a.webp" alt="Было: объёмная коробка и целые бутылки" loading="lazy" decoding="async"></picture><figcaption>Было</figcaption></figure>
+    <span class="было-стало__стрелка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M4 12h15M13 6l6 6-6 6"/>
+</svg></span>
+    <figure class="фото было-стало__после"><picture><source media="(max-width: 899px)" srcset="img/kadr-7b-telefon.webp"><img src="img/kadr-7b.webp" alt="Стало: плоские листы картона и смятые бутылки" loading="lazy" decoding="async"></picture><figcaption>Стало</figcaption></figure>
+  </div>
+  <ol class="правила">
+    <li class="правило"><p class="правило__номер">1</p><h3 class="правило__имя">Сухое и чистое</h3><p class="правило__текст">без остатков еды, масла и органики</p></li>
+    <li class="правило"><p class="правило__номер">2</p><h3 class="правило__имя">Плоское</h3><p class="правило__текст">коробки разберите в листы, бутылки и банки сомните</p></li>
+    <li class="правило"><p class="правило__номер">3</p><h3 class="правило__имя">Без примесей</h3><p class="правило__текст">в картоне нет плёнки и пенопласта, плёнка полностью прозрачная</p></li>
+  </ol>
+  <div class="панели">
+    <div class="панель панель--можно">
+      <h3 class="панель__имя"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M8 12.5l2.5 2.5L16 9.5"/>
+</svg> Можно не снимать</h3>
+      <p class="панель__текст">скрепки и папки с бумаги, этикетки и крышки с бутылок</p>
+    </div>
+    <div class="панель панель--нельзя">
+      <h3 class="панель__имя"><span class="крест"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 5v14M5 12h14"/>
+</svg></span> Не принимаем</h3>
+      <p class="панель__текст">пакеты-«майки», флаконы от бытовой химии, бутылки от растительного масла и молока, канистры из-под кислоты, ламинированную бумагу, коробки, пропитанные маслом, краской или строительными смесями</p>
+      <div class="проверка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h7l5 5v13H7z"/>
+  <path d="M14 3v5h5M10 13h5M10 17h5"/>
+</svg><p><b>Не уверены в бумаге — порвите лист:</b> рвётся — примем, тянется — это ламинат.</p></div>
+    </div>
+  </div>
+  <div class="действие"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Задать вопрос</a></div>
+</div>
+</section>
+<section class="блок блок--решение тёмный второй" id="экран-08" data-тип="решение" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="верх">
+  <figure class="фото фон-кадр"><picture><source media="(max-width: 899px)" srcset="img/kadr-8-telefon.webp"><img src="img/kadr-8.webp" alt="Тюк спрессованной бумаги и коробки архива на поддонах в складе" loading="lazy" decoding="async"></picture></figure>
+  <div class="раскладка">
+    <div>
+      <p class="кикер"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7 3h7l5 5v13H7z"/>
+  <path d="M14 3v5h5M10 13h5M10 17h5"/>
+</svg>для организаций</p>
+      <h2>Утилизация архивов с актом о переработке</h2>
+      <p class="лид">Переработаем конфиденциальную документацию и архивы в нечитаемый вид и выдадим акт</p>
+      <p class="цена"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M9 4h5a3.5 3.5 0 0 1 0 7H9M9 4v16M7 15h7"/>
+</svg> Цена — по договорённости: зависит от объёма и вида документов.</p>
+      <div class="действие"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Обсудить утилизацию архива</a></div>
+    </div>
+    <div class="сцена" aria-hidden="true">
+      <div class="акт">
+        <p class="акт__шапка">Документ остаётся у вас</p>
+        <p class="акт__имя">Акт о переработке</p>
+        <div class="акт__строки"><span></span><span></span><span></span><span></span></div>
+        <div class="акт__подпись"></div>
+        <div class="печать">пере-<br>работано</div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <ol class="ход">
+    <li><p class="ход__номер">01</p><h3 class="ход__имя">Договор</h3><p class="ход__текст">заключаем с организацией до вывоза</p></li>
+    <li><p class="ход__номер">02</p><h3 class="ход__имя">Вывоз</h3><p class="ход__текст">забираем архив сами, грузим сами</p></li>
+    <li><p class="ход__номер">03</p><h3 class="ход__имя">Переработка</h3><p class="ход__текст">документы превращаются в нечитаемую массу</p></li>
+    <li><p class="ход__номер">04</p><h3 class="ход__имя">Акт</h3><p class="ход__текст">документ о переработке остаётся у вас</p></li>
+  </ol>
+</div>
+</section>
+<section class="блок блок--отзывы тёмный" id="экран-09" data-тип="отзывы" data-вёрстка="своя">
+<div class="блок__внутри">
+  <div class="верх-экрана">
+    <h2>Нам доверяют</h2>
+    <p class="лид">Магазины, торговые центры и производства Костромы и области</p>
+  </div>
+  <div class="полоса">
+    <div class="лента"><ul>
+<li style="--f:0.753"><figure class="фото лого"><img src="img/logo/ashan-duo.webp" alt="Ашан" width="314" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.645"><figure class="фото лого"><img src="img/logo/detskij-mir-duo.webp" alt="Детский мир" width="455" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.456"><figure class="фото лого"><img src="img/logo/sportmaster-duo.webp" alt="Спортмастер" width="1039" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.92"><figure class="фото лого"><img src="img/logo/myasokombinat-duo.webp" alt="Костромской мясокомбинат" width="195" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.796"><figure class="фото лого"><img src="img/logo/baltika-duo.webp" alt="Балтика" width="275" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.673"><figure class="фото лого"><img src="img/logo/chitaj-gorod-duo.webp" alt="Читай-город" width="411" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.565"><figure class="фото лого"><img src="img/logo/sokolov-duo.webp" alt="SOKOLOV" width="624" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.791"><figure class="фото лого"><img src="img/logo/svetofor-duo.webp" alt="Светофор" width="280" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.732"><figure class="фото лого"><img src="img/logo/kollazh-duo.webp" alt="ТРЦ «Коллаж»" width="336" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:1.0"><figure class="фото лого"><img src="img/logo/rio-duo.webp" alt="ТРЦ «РИО»" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.577"><figure class="фото лого"><img src="img/logo/platina-duo.webp" alt="Ювелирный завод «Платина»" width="592" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.581"><figure class="фото лого"><img src="img/logo/resilux-duo.webp" alt="Resilux" width="582" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.585"><figure class="фото лого"><img src="img/logo/itelma-duo.webp" alt="НПП Итэлма" width="574" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.753"><figure class="фото лого"><img src="img/logo/ashan-duo.webp" alt="" width="314" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.645"><figure class="фото лого"><img src="img/logo/detskij-mir-duo.webp" alt="" width="455" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.456"><figure class="фото лого"><img src="img/logo/sportmaster-duo.webp" alt="" width="1039" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.92"><figure class="фото лого"><img src="img/logo/myasokombinat-duo.webp" alt="" width="195" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.796"><figure class="фото лого"><img src="img/logo/baltika-duo.webp" alt="" width="275" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.673"><figure class="фото лого"><img src="img/logo/chitaj-gorod-duo.webp" alt="" width="411" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.565"><figure class="фото лого"><img src="img/logo/sokolov-duo.webp" alt="" width="624" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.791"><figure class="фото лого"><img src="img/logo/svetofor-duo.webp" alt="" width="280" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.732"><figure class="фото лого"><img src="img/logo/kollazh-duo.webp" alt="" width="336" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:1.0"><figure class="фото лого"><img src="img/logo/rio-duo.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.577"><figure class="фото лого"><img src="img/logo/platina-duo.webp" alt="" width="592" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.581"><figure class="фото лого"><img src="img/logo/resilux-duo.webp" alt="" width="582" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.585"><figure class="фото лого"><img src="img/logo/itelma-duo.webp" alt="" width="574" height="160" loading="lazy" decoding="async"></figure></li>
+    </ul></div>
+    <div class="лента лента--назад"><ul>
+<li style="--f:0.803"><figure class="фото лого"><img src="img/logo/lada-servis-duo.webp" alt="Лада Сервис" width="270" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.749"><figure class="фото лого"><img src="img/logo/kapeliya-duo.webp" alt="Капелия" width="318" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.604"><figure class="фото лого"><img src="img/logo/piccafabrika-duo.webp" alt="Пицца Фабрика" width="531" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.536"><figure class="фото лого"><img src="img/logo/kotletar-duo.webp" alt="Котлетарь" width="707" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.541"><figure class="фото лого"><img src="img/logo/admiral-duo.webp" alt="Адмиралъ" width="690" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.806"><figure class="фото лого"><img src="img/logo/admiral-benbou-duo.webp" alt="Адмирал Бенбоу" width="267" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.485"><figure class="фото лого"><img src="img/logo/sladkij-raj-duo.webp" alt="Сладкий рай" width="897" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:1.0"><figure class="фото лого"><img src="img/logo/belyj-slon-duo.webp" alt="Кондитерская «Белый слон»" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:1.0"><figure class="фото лого"><img src="img/logo/vysshaya-liga-duo.webp" alt="Высшая лига" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.984"><figure class="фото лого"><img src="img/logo/fortuna-duo.webp" alt="Фортуна" width="166" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.901"><figure class="фото лого"><img src="img/logo/svetloyar-duo.webp" alt="Светлояр" width="205" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.569"><figure class="фото лого"><img src="img/logo/kosmos-duo.webp" alt="Космос" width="612" height="160" loading="lazy" decoding="async"></figure></li>
+<li style="--f:0.479"><figure class="фото лого"><img src="img/logo/desyatochka-duo.webp" alt="Десяточка" width="925" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.803"><figure class="фото лого"><img src="img/logo/lada-servis-duo.webp" alt="" width="270" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.749"><figure class="фото лого"><img src="img/logo/kapeliya-duo.webp" alt="" width="318" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.604"><figure class="фото лого"><img src="img/logo/piccafabrika-duo.webp" alt="" width="531" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.536"><figure class="фото лого"><img src="img/logo/kotletar-duo.webp" alt="" width="707" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.541"><figure class="фото лого"><img src="img/logo/admiral-duo.webp" alt="" width="690" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.806"><figure class="фото лого"><img src="img/logo/admiral-benbou-duo.webp" alt="" width="267" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.485"><figure class="фото лого"><img src="img/logo/sladkij-raj-duo.webp" alt="" width="897" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:1.0"><figure class="фото лого"><img src="img/logo/belyj-slon-duo.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:1.0"><figure class="фото лого"><img src="img/logo/vysshaya-liga-duo.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.984"><figure class="фото лого"><img src="img/logo/fortuna-duo.webp" alt="" width="166" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.901"><figure class="фото лого"><img src="img/logo/svetloyar-duo.webp" alt="" width="205" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.569"><figure class="фото лого"><img src="img/logo/kosmos-duo.webp" alt="" width="612" height="160" loading="lazy" decoding="async"></figure></li>
+<li class="повтор" aria-hidden="true" style="--f:0.479"><figure class="фото лого"><img src="img/logo/desyatochka-duo.webp" alt="" width="925" height="160" loading="lazy" decoding="async"></figure></li>
+    </ul></div>
+  </div>
+</div>
+</section>
+<section class="блок блок--вопросы-ответы тёмный второй" id="экран-10" data-тип="вопросы-ответы" data-вёрстка="своя">
+<div class="блок__внутри">
+  <h2>Частые вопросы</h2>
+  <div class="темы">
+    <div class="тема"><p class="тема__шапка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="8" width="13" height="11" rx="1.5"/>
+  <path d="M16 12h3l2.5 3v4H16"/>
+  <circle cx="8" cy="20" r="1.3"/>
+  <circle cx="18" cy="20" r="1.3"/>
+</svg><span>Вывоз</span></p>
+      <details class="впр" open><summary><span class="впр__текст">От скольки килограммов вы приезжаете?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Вывозим сами от 500 кг. Меньше — привезите в пункт приёма, примем любой объём.</p></details>
+      <details class="впр"><summary><span class="впр__текст">Как быстро приедете?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>К новым клиентам обычно на следующий день, организациям ставим постоянные дни вывоза.</p></details>
+      <details class="впр"><summary><span class="впр__текст">Вы работаете только в Костроме?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Пункты приёма — в Костроме и Шарье. Вывозим по Костроме, Шарье и районам рядом.</p></details>
+    </div>
+    <div class="тема"><p class="тема__шапка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+  <circle cx="12" cy="10" r="2"/>
+</svg><span>Пункт приёма</span></p>
+      <details class="впр"><summary><span class="впр__текст">Нужно ли записываться, чтобы привезти сырьё?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Нет. Приезжайте в рабочие часы: Пн–Пт 8:00–17:30, Сб 8:00–14:00.</p></details>
+      <details class="впр"><summary><span class="впр__текст">Нужно ли снимать скрепки, крышки и этикетки?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Нет: скрепки и папки с бумаги, крышки и этикетки с бутылок снимать не нужно.</p></details>
+    </div>
+    <div class="тема"><p class="тема__шапка"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="2" y="6" width="20" height="12" rx="2"/>
+  <circle cx="12" cy="12" r="2.5"/>
+</svg><span>Деньги и договор</span></p>
+      <details class="впр"><summary><span class="впр__текст">Как вы платите?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Сразу после взвешивания: наличными, на карту или на расчётный счёт. По договорённости взвешиваем на базе и переводим деньги на счёт.</p></details>
+      <details class="впр"><summary><span class="впр__текст">Сколько я получу точно?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Калькулятор даёт примерную сумму. Точную считаем по весу на поверенных весах, при вас.</p></details>
+      <details class="впр"><summary><span class="впр__текст">Работаете с организациями по договору?</span><span class="впр__знак" aria-hidden="true"></span></summary><p>Да. Заключаем договор, а за утилизацию архивов выдаём акт о переработке.</p></details>
+    </div>
+  </div>
+  <div class="плита">
+    <div><p class="плита__заг">Не нашли свой вопрос?</p><p class="плита__текст">Напишите в Макс или Телеграм — ответим и подскажем, примем ли ваше сырьё</p></div>
+    <span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span>
+  </div>
+</div>
+</section>
+<section class="блок блок--контакты тёмный" id="экран-11" data-тип="контакты" data-вёрстка="своя">
+<div class="блок__внутри">
+  <h2>Привезите сырьё или напишите нам</h2>
+  <p class="лид">Два пункта приёма, одни часы работы — пишите в Макс или Телеграм</p>
+  <div class="пункты">
+    <article class="пункт стекло">
+      <iframe class="карта" src="https://yandex.ru/map-widget/v1/?ll=41.004231,57.761168&amp;pt=41.004231,57.761168,pm2rdm&amp;z=16" title="Пункт приёма на карте: Кострома, ул. Зелёная, 2А" loading="lazy" allowfullscreen></iframe>
+      <div class="пункт__низ"><h3 class="пункт__город">Кострома</h3><p class="пункт__улица">ул. Зелёная, 2А</p>
+      <a class="маршрут" href="https://yandex.ru/maps/?rtext=~57.761168,41.004231&amp;rtt=auto" target="_blank" rel="noopener"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+  <circle cx="12" cy="10" r="2"/>
+</svg><span>Проложить маршрут</span></a></div>
+    </article>
+    <article class="пункт стекло">
+      <iframe class="карта" src="https://yandex.ru/map-widget/v1/?text=%D0%A8%D0%B0%D1%80%D1%8C%D1%8F%2C%20%D1%83%D0%BB.%20%D0%A1%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%2C%2013&amp;z=16" title="Пункт приёма на карте: Шарья, ул. Сенная, 13" loading="lazy" allowfullscreen></iframe>
+      <div class="пункт__низ"><h3 class="пункт__город">Шарья</h3><p class="пункт__улица">ул. Сенная, 13</p>
+      <a class="маршрут" href="https://yandex.ru/maps/?text=%D0%A8%D0%B0%D1%80%D1%8C%D1%8F%2C%20%D1%83%D0%BB.%20%D0%A1%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F%2C%2013" target="_blank" rel="noopener"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/>
+  <circle cx="12" cy="10" r="2"/>
+</svg><span>Проложить маршрут</span></a></div>
+    </article>
+  </div>
+  <div class="низ">
+    <div class="связь стекло">
+      <p class="часы"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M12 7v5l3.5 2"/>
+</svg><span>Пн–Пт 8:00–17:30, Сб 8:00–14:00, воскресенье — выходной — в обоих пунктах</span></p>
+      <ul class="контакты">
+      <li><span class="контакт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+</svg></span><span><span class="контакт__имя">Телефон</span><a class="контакт__адрес" href="tel:+74942419988">8 (4942) 41-99-88</a></span></li>
+      <li><span class="контакт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+</svg></span><span><span class="контакт__имя">Телефон, Макс, Телеграм</span><a class="контакт__адрес" href="tel:+79203991978">8-920-399-19-78</a></span></li>
+      <li><span class="контакт__икон"><svg class="иконка" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="5" width="18" height="14" rx="2"/>
+  <path d="M3 7l9 6 9-6"/>
+</svg></span><span><span class="контакт__имя">Почта</span><a class="контакт__адрес" href="mailto:vtorsbor88@mail.ru">vtorsbor88@mail.ru</a></span></li>
+      </ul>
+    </div>
+    <div class="плита">
+      <p class="плита__заг">Связаться с нами</p>
+      <span class="две-кнопки"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></span>
+    </div>
+  </div>
+</div>
 </section>
 <div class="липкая-кнопка липкая-кнопка--тёмная"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a></div>
 <script>
 (function () {
   var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
-  var кнопка = document.querySelector(".первый-экран__действие .кнопка--главная");
-  if (!кнопка || !window.IntersectionObserver) { return; }
+  var кнопки = Array.prototype.filter.call(
+    document.querySelectorAll(".кнопка--главная"),
+    function (к) { return !к.closest(".липкая-кнопка"); });
+  if (!кнопки.length || !window.IntersectionObserver) { return; }
 
-  function пометить(на_виду) { document.body.classList.toggle(СПИТ, !!на_виду); }
+  var на_виду = new Set();
+  function пометить() { document.body.classList.toggle(СПИТ, на_виду.size > 0); }
 
-  var б = кнопка.getBoundingClientRect();
-  пометить(б.bottom > 0 && б.top < (window.innerHeight || 0));
+  var высота = window.innerHeight || 0;
+  кнопки.forEach(function (к) {
+    var б = к.getBoundingClientRect();
+    if (б.bottom > 0 && б.top < высота) { на_виду.add(к); }
+  });
+  пометить();
 
   requestAnimationFrame(function () {
     requestAnimationFrame(function () { document.body.classList.add("панель-с-переходом"); });
   });
 
-  new IntersectionObserver(function (записи) {
-    пометить(записи[записи.length - 1].isIntersecting);
-  }, { threshold: 0 }).observe(кнопка);
+  var наблюдатель = new IntersectionObserver(function (записи) {
+    записи.forEach(function (з) {
+      if (з.isIntersecting) { на_виду.add(з.target); } else { на_виду.delete(з.target); }
+    });
+    пометить();
+  }, { threshold: 0 });
+  кнопки.forEach(function (к) { наблюдатель.observe(к); });
 })();
 </script>
 </body>
