@@ -120,9 +120,11 @@ background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмны
 /* Телефон: машина поднята выше, затемнение под текст начинается ниже колёс — надпись и номер на фургоне читаются;
    под шапкой тоже тёмная полоса */
 @media (max-width: 899px) {
-  #экран-1 .картинка--сцена img { transform: translateY(-64px); }
+  /* 03.10.2026 (просьба человека): машина целиком — кадр не растягивается на всю высоту, а лежит во всю ширину по своей пропорции */
+  #экран-1 .картинка--сцена img { position: absolute; left: 0; top: 56px; width: 100%; height: auto; aspect-ratio: 900 / 703; object-fit: cover;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.15) 8%, rgba(0,0,0,.4) 17%, rgba(0,0,0,.7) 27%, #000 40%, #000 72%, rgba(0,0,0,.75) 81%, rgba(0,0,0,.45) 88%, rgba(0,0,0,.18) 94%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.15) 8%, rgba(0,0,0,.4) 17%, rgba(0,0,0,.7) 27%, #000 40%, #000 72%, rgba(0,0,0,.75) 81%, rgba(0,0,0,.45) 88%, rgba(0,0,0,.18) 94%, transparent 100%); }
   #экран-1 .картинка--сцена::after { background:
-      linear-gradient(to bottom, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 0, color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 70px, transparent 150px),
       linear-gradient(to top, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 22%,
           color-mix(in srgb, var(--цвет-тёмный-фон) 50%, transparent) 30%, transparent 37%); }
 }
@@ -151,8 +153,25 @@ background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмны
   .липкая-кнопка .кнопка--главная { animation: none; }
   /* Липкая кнопка телефона видна всегда, не прячется у главных кнопок экранов (решение человека 03.10.2026) */
   body.главная-на-виду .липкая-кнопка { transform: none; opacity: 1; pointer-events: auto; }
+  /* Подложка страницы тёмная (03.10.2026): на телефоне под последним экраном оставлено место под липкую кнопку,
+     и светлый фон страницы виднелся там светлой полосой. Сайт только тёмный — подложка в цвет фона */
+  body { background: var(--цвет-тёмный-фон); }
+  /* Липкая кнопка прячется только пока на виду кнопки первого экрана (решение человека 03.10.2026): иначе она ложится
+     поверх «Написать в Макс / Телеграм» обложки; ниже по странице видна всегда. Метку на body ставит скрипт в конце экрана */
+  body.первый-на-виду .липкая-кнопка { transform: translateY(100%); opacity: 0; pointer-events: none; }
   /* Две кнопки — одной ширины на компьютере; на телефоне обе и так во всю ширину */
   @media (min-width: 900px) { #экран-1 .первый-экран__действие { display: inline-grid; grid-auto-flow: column; grid-auto-columns: 1fr; } }
+
+/* Новое фото (03.10.2026): машина стоит левее, справа у кадра место — фото снова во всю ширину,
+   правый край плавно уходит в тёмный фон */
+@media (min-width: 900px) {
+  #экран-1 .картинка--сцена::after { background:
+      linear-gradient(to left, color-mix(in srgb, var(--цвет-тёмный-фон) 92%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 4%,
+          color-mix(in srgb, var(--цвет-тёмный-фон) 40%, transparent) 9%, color-mix(in srgb, var(--цвет-тёмный-фон) 15%, transparent) 14%, transparent 19%),
+      linear-gradient(to bottom, color-mix(in srgb, var(--цвет-тёмный-фон) 75%, transparent) 0, transparent 130px),
+      linear-gradient(to right, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 30%,
+          color-mix(in srgb, var(--цвет-тёмный-фон) 65%, transparent) 40%, color-mix(in srgb, var(--цвет-тёмный-фон) 25%, transparent) 48%, transparent 55%); }
+}
 </style>
   <header class="шапка">
     <a class="шапка__лого" href="#">ВторСбор</a>
@@ -173,6 +192,17 @@ background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмны
       <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://8-920-399-19-78">Написать в Макс</a><a class="кнопка кнопка--контур кнопка--телеграм" href="https://t.me/+79203991978">Написать в Телеграм</a></div>
     </div>
   </div>
+<script>
+/* Метка «кнопки первого экрана на виду» — для липкой кнопки телефона (03.10.2026) */
+(function () {
+  var д = document.querySelector("#экран-1 .первый-экран__действие");
+  if (!д || !window.IntersectionObserver) { return; }
+  var б = д.getBoundingClientRect();
+  document.body.classList.toggle("первый-на-виду", б.bottom > 0 && б.top < (window.innerHeight || 0));
+  new IntersectionObserver(function (з) { document.body.classList.toggle("первый-на-виду", з[з.length - 1].isIntersecting); },
+    { threshold: 0 }).observe(д);
+})();
+</script>
 </section>
 <section class="блок блок--прайс-лист тёмный второй" id="экран-02" data-тип="прайс-лист" data-вёрстка="своя">
 <div class="блок__внутри">
