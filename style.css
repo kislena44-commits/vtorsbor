@@ -1994,6 +1994,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04.светлый .половина__обещание { color: var(--цвет-на-акценте); }
   #экран-04.светлый .половина__фраза-жителям { color: var(--цвет-тёмный-текст); }
 
+  #экран-04 .половина__фото, #экран-04 .половина--жителям__фото { position: relative; }
+  #экран-04 .пометка-иллюстрация { position: absolute; top: 10px; right: 10px; z-index: 3; pointer-events: none;
+      font-size: var(--кегль-мелкий); line-height: 1; letter-spacing: .02em; padding: 5px 9px; border-radius: var(--радиус-малый);
+      color: var(--цвет-тёмный-текст); background: color-mix(in srgb, var(--цвет-тёмный-фон) 62%, transparent);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
 /* экран 05 */
 #экран-05.тёмный { background: linear-gradient(to bottom, var(--цвет-тёмный-фон) 0%, var(--цвет-тёмный-фон-2) 100%); }
   #экран-05.светлый { background: linear-gradient(to bottom, var(--цвет-фон) 0%, var(--цвет-фон-2) 100%); }
@@ -2123,6 +2129,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (min-width: 900px) {
     #экран-05 .плитка--глав { margin-top: 0; padding-top: clamp(24px, 2.6vw, 34px); }
   }
+
+  #экран-05 .лента-кадр { position: relative; }
+  #экран-05 .пометка-иллюстрация { position: absolute; top: 10px; right: 10px; z-index: 3; pointer-events: none;
+      font-size: var(--кегль-мелкий); line-height: 1; letter-spacing: .02em; padding: 5px 9px; border-radius: var(--радиус-малый);
+      color: var(--цвет-тёмный-текст); background: color-mix(in srgb, var(--цвет-тёмный-фон) 62%, transparent);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 
 /* экран 06 */
 #экран-06.тёмный { background: var(--цвет-тёмный-фон); }
@@ -2255,6 +2267,11 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-06 .строка::before { background: radial-gradient(ellipse 70% 30% at 40% 25%, color-mix(in srgb, var(--цвет-акцент) 36%, transparent) 0%, transparent 100%),
                   radial-gradient(ellipse 70% 30% at 60% 75%, color-mix(in srgb, var(--цвет-тёплый) 28%, transparent) 0%, transparent 100%); }
   }
+
+  #экран-06 .пометка-иллюстрация { position: absolute; top: 10px; right: 10px; z-index: 3; pointer-events: none;
+      font-size: var(--кегль-мелкий); line-height: 1; letter-spacing: .02em; padding: 5px 9px; border-radius: var(--радиус-малый);
+      color: var(--цвет-тёмный-текст); background: color-mix(in srgb, var(--цвет-тёмный-фон) 62%, transparent);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 
 /* экран 07 */
 #экран-07.тёмный { background: linear-gradient(to bottom, var(--цвет-тёмный-фон) 0%, var(--цвет-тёмный-фон-2) 100%); }
@@ -2445,6 +2462,13 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-08 .кнопка:hover { transform: scale(1.05); }
   #экран-08 .кнопка:active { transform: scale(.98); }
   @media (prefers-reduced-motion: reduce) { #экран-08 .кнопка:hover, #экран-08 .кнопка:active { transform: none; } }
+
+  #экран-08 .пометка-иллюстрация { position: absolute; top: 10px; right: 10px; z-index: 3; pointer-events: none;
+      font-size: var(--кегль-мелкий); line-height: 1; letter-spacing: .02em; padding: 5px 9px; border-radius: var(--радиус-малый);
+      color: var(--цвет-тёмный-текст); background: color-mix(in srgb, var(--цвет-тёмный-фон) 62%, transparent);
+      -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+  @media (max-width: 899px) { #экран-08 .пометка-иллюстрация { top: auto; bottom: 34%; } }
 
 /* экран 09 */
 #экран-09.тёмный { background: var(--цвет-тёмный-фон); }
