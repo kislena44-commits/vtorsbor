@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ВторСбор — приём вторсырья в Костроме и Шарье</title>
+<title>Сдать макулатуру и картон в Костроме — ВторСбор</title>
 <link rel="icon" href="img/znachok/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="img/znachok/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="img/znachok/apple-touch-icon.png">
-<meta name="description" content="Принимаем картон, макулатуру, плёнку, ПЭТ и пластик. Вывозим от 500 кг, платим сразу после взвешивания. Пункты в Костроме и Шарье.">
+<meta name="description" content="Сдайте картон, бумагу, плёнку и пластик за деньги: привезите в пункт в Костроме или Шарье или вызовите машину от 500 кг. Пишите в Макс.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="ВторСбор — приём вторсырья в Костроме и Шарье">
-<meta property="og:description" content="Принимаем картон, макулатуру, плёнку, ПЭТ и пластик. Вывозим от 500 кг, платим сразу после взвешивания. Пункты в Костроме и Шарье.">
+<meta property="og:title" content="Сдать макулатуру и картон в Костроме — ВторСбор">
+<meta property="og:description" content="Сдайте картон, бумагу, плёнку и пластик за деньги: привезите в пункт в Костроме или Шарье или вызовите машину от 500 кг. Пишите в Макс.">
 <meta property="og:image" content="https://kislena44-commits.github.io/vtorsbor/img/card.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@
   --радиус-карточки: 10px;  --радиус-плитки: 12px;  --радиус-телефон: 46px;  --кнопка-радиус: 8px;
   --радиус-модуля: 8px;  --нить: 2px;
   --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
-  --цвет-тёплый-тёмный: #916403;
+  --цвет-тёплый-тёмный: #8C5B1B;
 }
 @media (min-width: 900px) {
   :root { --кегль-h1: clamp(52px, 5.1vw, 74px); }
@@ -776,6 +776,22 @@ background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмны
     </ul></div>
   </div>
 </div>
+<script>
+(function () {
+  var экран = document.getElementById("экран-09");
+  var картинки = экран ? экран.querySelectorAll(".лента img") : [];
+  if (!картинки.length) { return; }
+  экран.classList.add("ждём-логотипы");
+  var пуск = function () { экран.classList.remove("ждём-логотипы"); };
+  var ждать = Array.prototype.map.call(картинки, function (к) {
+    if (к.complete) { return к.decode ? к.decode().catch(function () {}) : Promise.resolve(); }
+    return new Promise(function (готово) { к.addEventListener("load", готово); к.addEventListener("error", готово); })
+      .then(function () { return к.decode ? к.decode().catch(function () {}) : null; });
+  });
+  Promise.all(ждать).then(пуск);
+  setTimeout(пуск, 8000);   // сеть совсем плохая — всё равно поехать, а не стоять
+})();
+</script>
 </section>
 <section class="блок блок--вопросы-ответы тёмный второй" id="экран-10" data-тип="вопросы-ответы" data-вёрстка="своя">
 <div class="блок__внутри">

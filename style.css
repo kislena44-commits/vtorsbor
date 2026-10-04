@@ -2470,6 +2470,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   @keyframes экран-09-едет { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 
+  #экран-09.ждём-логотипы .лента ul { animation-name: none; }
   @media (max-width: 600px) {
     #экран-09 .верх-экрана { grid-template-columns: 1fr; gap: 14px; }
     #экран-09 li { --лого: 50px; padding: 0 22px; }
