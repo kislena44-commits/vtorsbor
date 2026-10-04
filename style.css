@@ -2454,12 +2454,13 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-09 .лид { margin: 0; font-size: var(--кегль-лид); line-height: 1.4; }
 
   #экран-09 .полоса { position: relative; margin: clamp(32px, 4vw, 56px) 0 0; left: calc(50% - 50vw); width: 100vw;
-      padding: clamp(26px, 3vw, 40px) 0; display: grid; gap: clamp(22px, 2.6vw, 36px);
-      -webkit-mask-image: linear-gradient(to right, transparent, var(--цвет-тёмный-фон) 12%, var(--цвет-тёмный-фон) 88%, transparent);
-      mask-image: linear-gradient(to right, transparent, var(--цвет-тёмный-фон) 12%, var(--цвет-тёмный-фон) 88%, transparent); }
+      padding: clamp(26px, 3vw, 40px) 0; display: grid; gap: clamp(22px, 2.6vw, 36px); isolation: isolate; }
+
+  #экран-09 .полоса::after { content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: linear-gradient(to right, var(--цвет-тёмный-фон), transparent 12%, transparent 88%, var(--цвет-тёмный-фон)); }
   #экран-09 .лента { overflow: hidden; }
   #экран-09 .лента ul { list-style: none; margin: 0; padding: 0; display: flex; width: max-content;
-      animation: экран-09-едет 70s linear infinite; }
+      animation: экран-09-едет 70s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
   #экран-09 .лента--назад ul { animation-direction: reverse; animation-duration: 80s; }
   #экран-09 .полоса:hover ul { animation-play-state: paused; }
   #экран-09 li { --лого: clamp(56px, 4.6vw, 72px); display: grid; place-items: center; padding: 0 clamp(24px, 2.6vw, 40px); }
@@ -2467,7 +2468,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   #экран-09 .лого { border-radius: 0; box-shadow: none; overflow: visible; background: none; }
 
-  @keyframes экран-09-едет { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes экран-09-едет { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 
   @media (max-width: 600px) {
     #экран-09 .верх-экрана { grid-template-columns: 1fr; gap: 14px; }
@@ -2478,13 +2479,15 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (prefers-reduced-motion: reduce) {
     #экран-09 .лента ul { animation: none; width: auto; flex-wrap: wrap; justify-content: center; row-gap: 24px; }
     #экран-09 .повтор { display: none; }
-    #экран-09 .полоса { -webkit-mask-image: none; mask-image: none; }
+    #экран-09 .полоса::after { display: none; }
   }
 
   #экран-09.тёмный .лид { color: color-mix(in srgb, var(--цвет-тёмный-текст) 90%, transparent); }
 
   #экран-09.тёмный .полоса { border-block: 1px solid; background: linear-gradient(160deg, color-mix(in srgb, var(--цвет-тёмный-текст) 11%, transparent), color-mix(in srgb, var(--цвет-тёмный-текст) 4%, transparent));
-      border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent);
+      border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+
+  #экран-09.тёмный .полоса::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
       -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%); }
 
 /* экран 10 */
